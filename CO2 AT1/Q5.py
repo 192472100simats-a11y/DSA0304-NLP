@@ -1,0 +1,29 @@
+from nltk.stem import PorterStemmer
+
+stemmer = PorterStemmer()
+
+words = ["relational", "relation", "relate"]
+
+print("{:<12} {:<20} {:<20} {:<10}".format(
+    "Word", "Rule Applied", "Intermediate", "Final Stem"))
+
+print("-" * 75)
+
+for word in words:
+
+    if word == "relational":
+        rule = "Remove 'al'"
+        intermediate = "relation"
+
+    elif word == "relation":
+        rule = "Remove 'ion'"
+        intermediate = "relat"
+
+    elif word == "relate":
+        rule = "Remove 'e'"
+        intermediate = "relat"
+
+    final = stemmer.stem(word)
+
+    print("{:<12} {:<20} {:<20} {:<10}".format(
+        word, rule, intermediate, final))
