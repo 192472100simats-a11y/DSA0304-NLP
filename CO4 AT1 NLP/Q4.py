@@ -1,0 +1,34 @@
+# Syntax-Driven Semantic Analysis
+
+sentences = {
+    "Doctor prescribed medicine to patient.": {
+        "Doctor": "Agent",
+        "Medicine": "Treatment",
+        "Patient": "Recipient"
+    },
+
+    "Patient reported severe headache.": {
+        "Patient": "Experiencer",
+        "Headache": "Symptom"
+    },
+
+    "Nurse monitored patient continuously.": {
+        "Nurse": "Agent",
+        "Patient": "Object"
+    },
+
+    "Medicine reduced blood pressure.": {
+        "Medicine": "Cause/Treatment",
+        "Blood Pressure": "Affected Condition"
+    }
+}
+
+for sentence, roles in sentences.items():
+
+    print("Sentence:", sentence)
+
+    for entity, role in roles.items():
+        print(entity, "->", role)
+
+    print()
+
